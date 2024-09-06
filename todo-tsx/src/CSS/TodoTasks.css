@@ -1,0 +1,32 @@
+
+
+.taskList{
+    margin: 20px 0;
+}
+
+.taskDiv{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.todoContent{
+    font-family: "roboto", sans-serif;
+    font-size: 1.2rem;
+}
+
+.todoBtn{
+    font-family: "roboto", sans-serif;
+    font-size: 1.2rem;
+}
+
+.todoBtn button{
+    margin: 1rem;
+    padding: 5px;
+}

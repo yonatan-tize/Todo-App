@@ -1,0 +1,18 @@
+
+.taskContainer{
+    margin: 4rem auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+    max-width: 900px;
+    background-color: rgba(170, 249, 223, 0.684);
+
+}
+
+.taskContainer h1{
+    font-family: "roboto";
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 1rem;
+    background-color: rgb(131, 96, 96);
+    color: antiquewhite;
+}

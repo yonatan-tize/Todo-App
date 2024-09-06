@@ -1,0 +1,22 @@
+.inputField{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputField input{
+    width: 90%;
+    display: block;
+    margin: 1 rem 2rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.inputField button{
+    padding: 1rem 2rem;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    margin-top: 1rem;
+}

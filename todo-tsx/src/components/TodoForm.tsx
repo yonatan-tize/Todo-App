@@ -1,6 +1,7 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 import TodoServices from '../todoServices'
 import TodoType from '../todo';
+import '../CSS/TodoForm.css'
 
 
 interface TodoFormProps {
@@ -18,7 +19,7 @@ const TodoForm = ({ setTodos }: TodoFormProps) => {
   }
 
   return (
-    <div>
+    <div className='inputField'>
         <input 
           value={task} 
           onChange={(e) => setTask(e.target.value)} 

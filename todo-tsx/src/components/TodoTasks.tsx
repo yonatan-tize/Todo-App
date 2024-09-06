@@ -2,6 +2,7 @@ import {useState } from 'react'
 import TodoType from '../todo'
 import TodoServices from '../todoServices';
 import TodoForm from './TodoForm';
+import '../CSS/TodoTasks.css'
 
 const TodoTasks = () => {
   const [todos, setTodos] = useState<TodoType[]>(TodoServices.getTodos)
@@ -48,23 +49,25 @@ const TodoTasks = () => {
         <div>
             <TodoForm setTodos={setTodos}/>
         </div>
-        <div className='taskContainer'>
+        <div className='tasks'>
             { todos.map((todo)=>(
-                <div key={todo.id}>
+                <div key={todo.id} className='taskList'>
                     {editingTodoId === todo.id ?
-                    (<div>
+                    (<div className='taskDiv'>
                         <input type="text" value={editedTodoText} onChange={(e)=> setEditedTodoText(e.target.value)}/>
                         <button onClick={() => handleConfirmEdit(todo.id)}>confirm Edit</button>
                         <button onClick={handleAbortEdit}>Cancel Edit</button>
                     </div>) : (
-                    <div>
-                        <span>{todo.text}</span>
-                        <button onClick={()=> handleStartEdit(todo.id, todo.text)}>
-                            Edit
-                        </button>
-                        <button onClick={() => handleDeleteTask(todo.id)}>
-                            Delete
-                        </button>
+                    <div className='taskDiv'>
+                        <p className='todoContent'>{todo.text}</p>
+                        <div className='todoBtn'>
+                            <button onClick={()=> handleStartEdit(todo.id, todo.text)}>
+                                Edit
+                            </button>
+                            <button onClick={() => handleDeleteTask(todo.id)}>
+                                Delete
+                            </button>
+                        </div>
                      </div>
                     )}
 
