@@ -4,6 +4,11 @@ import TodoServices from '../todoServices';
 import TodoForm from './TodoForm';
 import '../CSS/TodoTasks.css'
 
+import { FaRegEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { FaSave } from "react-icons/fa";
+import { MdOutlineCancel } from "react-icons/md";
+
 const TodoTasks = () => {
   const [todos, setTodos] = useState<TodoType[]>(TodoServices.getTodos)
   const [editingTodoId, setEditingTodoId] = useState<number | null>(null);
@@ -55,17 +60,23 @@ const TodoTasks = () => {
                     {editingTodoId === todo.id ?
                     (<div className='taskDiv'>
                         <input type="text" value={editedTodoText} onChange={(e)=> setEditedTodoText(e.target.value)}/>
-                        <button onClick={() => handleConfirmEdit(todo.id)}>confirm Edit</button>
-                        <button onClick={handleAbortEdit}>Cancel Edit</button>
+                        <div className='todoBtn'>
+                            <button className='saveEditBtn' onClick={() => handleConfirmEdit(todo.id)}>
+                                <FaSave />
+                            </button>
+                            <button className='cancelEdit' onClick={handleAbortEdit}>
+                                <MdOutlineCancel />
+                            </button>
+                        </div>
                     </div>) : (
                     <div className='taskDiv'>
                         <p className='todoContent'>{todo.text}</p>
                         <div className='todoBtn'>
-                            <button onClick={()=> handleStartEdit(todo.id, todo.text)}>
-                                Edit
+                            <button className='editBtn' onClick={()=> handleStartEdit(todo.id, todo.text)}>
+                                <FaRegEdit />
                             </button>
-                            <button onClick={() => handleDeleteTask(todo.id)}>
-                                Delete
+                            <button className='deleteBtn' onClick={() => handleDeleteTask(todo.id)}>
+                                <MdDelete />
                             </button>
                         </div>
                      </div>

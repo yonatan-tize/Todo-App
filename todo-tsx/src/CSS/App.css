@@ -4,8 +4,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     max-width: 900px;
-    background-color: rgba(170, 249, 223, 0.684);
-
+    background-color: #d1dedd;
 }
 
 .taskContainer h1{
